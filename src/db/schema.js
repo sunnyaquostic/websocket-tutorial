@@ -20,12 +20,11 @@ export const commentary = pgTable('commentary', {
     matchId: integer('match_id').notNull().references(() => matches.id),
     minute: integer('minute'),
     sequence: integer('sequence'),
-    period: integer('sequence'),
+    period: text('period'),
     eventType: text('event_type'),
     actor: text('actor'),
     team: text('team'),
     message: text('message').notNull(),
     tags: text('tags').array(),
     createdAt: timestamp('created_at').notNull().defaultNow(),
-
 })
